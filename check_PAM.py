@@ -25,16 +25,17 @@ def main(argv = sys.argv):
     gdir = argv[2]
     chrom_to_seq = dict()
     ngg = 0; other = 0;
-    for line in ifile:
+    for line in ifile: 
         words = line.split()
 
-        ###### read whole chromosome sequences  #######
-        try: # for properly formatted genomic coordinates. allows float as well 
+        ##### read genome coordinate #####
+        try: # For numeric genomic coordinates (targeting) - allows integer/float coordinates
             chrom, begin, end, strand = words[0], int(eval(words[1])), int(eval(words[2])), words[5]
         except (SyntaxError, NameError) as error:
-            pass # nontargetting controls  e.g. NA or . 
+            pass # Ignorenontargetting controls  e.g. NA or . 
 
-        try: # if chromosome already loaded, use it
+        ###### read whole chromosome sequences  #######
+        try: 
             cseq = chrom_to_seq[chrom]
         except KeyError: # else, load chromosome
             with open(gdir + "/" + chrom + ".fa", 'r') as fafile:
@@ -56,7 +57,7 @@ def main(argv = sys.argv):
 
 
 
-
+    ### print out ###
     print("\t".join(["NGG", str(ngg)]))
     print("\t".join(["other", str(other)]))
     ifile.close()
