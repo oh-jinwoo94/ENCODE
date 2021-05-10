@@ -1,7 +1,19 @@
 # ENCODE CRISPR subgroup
 
 # scripts
-## check_PAM.py
+## for checking file correctness
+### check_guide_quant_format.py
+input: guide_quant_format.txt (guideline for ENCODE standard) and ENCODE-formatted guide_quant files
+NOTE: "guide_quant_format.txt" in this repository might not be up-to-date (last modified: 5/10/2021).
+
+Purpose: Check whether input file has a proper format that matches with guide_quant_format guideline. 
+
+sample command line:  python {format description file} {test file}
+
+python2 check_guide_quant_format.py guide_quant_format.txt GATA_rep1_HS_ENCODE_guideQuant.bed
+ 
+
+### check_PAM.py
 input:ENCODE-formatted guide_quant files
 
 Purpose: check whether PAM coordinates are correctly extracted by checking NGG sequence. 
@@ -10,7 +22,7 @@ sample command line:  python {ifile: guide_quant} {genome directory}
 
 python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes/hg38
 
-## gRNA_to_log2FC.py  
+### gRNA_to_log2FC.py  
 
 input: ENCODE-formatted guide_quant files
 
@@ -21,7 +33,7 @@ sample command line (python  {gRNA quant 1 (e.g. T0)} {gRNA quant 2 (e.g. T14)} 
 python gRNA_to_log2FC.py  ../screens/MYC_rep1_LS_ENCODE_guideQuant.bed  ../screens/MYC_rep1_HS_ENCODE_guideQuant.bed  Sabeti_HCRFlowFISH_MYC_R1
 
 
-## summary_to_bedgraph.py 
+### summary_to_bedgraph.py 
 
 input: log2FC_summary file
 
