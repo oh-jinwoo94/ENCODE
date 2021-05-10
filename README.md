@@ -1,7 +1,7 @@
 # ENCODE CRISPR subgroup
 
 # scripts
-## checkPAM.py
+## check_PAM.py
 input:ENCODE-formatted guide_quant files
 
 Purpose: check whether PAM coordinates are correctly extracted by checking NGG sequence. 
