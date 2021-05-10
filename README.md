@@ -40,6 +40,8 @@ python gRNA_to_log2FC.py  ../screens/MYC_rep1_LS_ENCODE_guideQuant.bed  ../scree
 
 input: log2FC_summary file
 
+Purpose: select a type of log2FC in log2FC_summary, and use it to generate .bedgraph
+
 output: .bedgraph
 
 sample command line (format {log2FC summary} {col index for log2fc} {ofile name})
