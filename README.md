@@ -35,7 +35,7 @@ input:ENCODE-formatted guide_quant files, a directory containing chromosome-wide
 
 chrom.fa can be downloaded from https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/
 
-Purpose: If your file passes check_guide_quant_fomat.py, use this script to check whether PAM coordinates are correctly extracted by checking NGG sequence. 
+Purpose: If your file passes check_guide_quant_fomat.py, use this script to check whether your PAM coordinates are correctly extracted by checking NGG sequence. 
 
 sample command line:  python {ifile: guide_quant} {genome directory}
 
