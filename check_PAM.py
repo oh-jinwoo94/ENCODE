@@ -10,7 +10,7 @@ import sys
 
 
 # reverse complement a sequence
-rv = {'A': 'T', 'T':'A', 'G':'C', 'C':'G'}
+rv = {'A': 'T', 'T':'A', 'G':'C', 'C':'G', 'N':'N'}
 def revcomp(seq):
     rvcmp_seq = [rv[seq[i]] for i in range(len(seq) - 1, -1, -1)]
     return "".join(rvcmp_seq)
@@ -25,17 +25,16 @@ def main(argv = sys.argv):
     gdir = argv[2]
     chrom_to_seq = dict()
     ngg = 0; other = 0;
-    for line in ifile: 
+    for line in ifile:
         words = line.split()
 
-        ##### read genome coordinate #####
-        try: # For numeric genomic coordinates (targeting) - allows integer/float coordinates
+        ###### read whole chromosome sequences  #######
+        try: # for properly formatted genomic coordinates. allows float as well 
             chrom, begin, end, strand = words[0], int(eval(words[1])), int(eval(words[2])), words[5]
         except (SyntaxError, NameError) as error:
-            continue # Ignorenontargetting controls  e.g. NA or . 
+            continue # nontargetting controls  e.g. NA or . 
 
-        ###### read whole chromosome sequences  #######
-        try: 
+        try: # if chromosome already loaded, use it
             cseq = chrom_to_seq[chrom]
         except KeyError: # else, load chromosome
             with open(gdir + "/" + chrom + ".fa", 'r') as fafile:
@@ -51,14 +50,19 @@ def main(argv = sys.argv):
 
         ### histogram of pams ###
         if(pam[1:] == "GG"):
-            ngg += 1
+            ngg += 1.0
         else: 
-            other += 1
+            other += 1.0
 
 
 
-    ### print out ###
+
     print("\t".join(["NGG", str(ngg)]))
     print("\t".join(["other", str(other)]))
+
+    if(ngg / (ngg+other) > 0.8):
+        print("More than 80% of the PAMs are NGG. The coordinates are likely to be correct")
+    else:
+        print("Less than 80% of the PAMs are NGG. The coordinates are likely to be incorrect")
     ifile.close()
 main()
