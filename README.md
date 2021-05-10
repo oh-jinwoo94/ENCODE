@@ -99,6 +99,8 @@ python summary_to_bedgraph.py  Sabeti_HCRFlowFISH_MYC_R1.log2FC_summary 4 Sabeti
 
 ## ENCODE standard guide_quantification file
 
+For more detail, check "guide_quant_format.txt"
+
 chr12   54300767        54300770        GATA1|chr12:54300748-54300767:+ 366     +       chr12:54300748-54300767:+       chrX    48786590        48786591        +       GATA1   ENSG00000102145 GGATTCCAGTGAGATCCGAG    GGATTCCAGTGAGATCCGAG    targeting       NA
 
 chr12   54300811        54300814        GATA1|chr12:54300792-54300811:+ 551     +       chr12:54300792-54300811:+       chrX    48786590        48786591        +       GATA1   ENSG00000102145 CTCCACCACAGGTGCCTGAA    GCTCCACCACAGGTGCCTGAA   targeting       NA
