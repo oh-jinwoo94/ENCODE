@@ -8,7 +8,7 @@ Purpose: check whether PAM coordinates are correctly extracted by checking NGG s
 
 sample command line:  python {ifile: guide_quant} {genome directory}
 
-python3 check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes/hg38
+python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes/hg38
 
 ## gRNA_to_log2FC.py  
 
