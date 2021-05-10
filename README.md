@@ -22,6 +22,7 @@ sample command line:  python {ifile: guide_quant} {genome directory}
 
 python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes/hg38
 
+## For analysis (PAM coordinate -> log2FC)
 ### gRNA_to_log2FC.py  
 
 input: ENCODE-formatted guide_quant files
