@@ -3,20 +3,26 @@
 # scripts
 ## checkPAM.py
 input:ENCODE-formatted guide_quant files
+
 Purpose: check whether PAM coordinates are correctly extracted by checking NGG sequence. 
+
 sample command line:  python {ifile: guide_quant} {genome directory}
+
 python3 check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes/hg38
 
 ## gRNA_to_log2FC.py  
 input: ENCODE-formatted guide_quant files
+
 output: log2FC_summary files
 
 sample command line (python  {gRNA quant 1 (e.g. T0)} {gRNA quant 2 (e.g. T14)} {ofile prefix})
+
 python gRNA_to_log2FC.py  ../screens/MYC_rep1_LS_ENCODE_guideQuant.bed  ../screens/MYC_rep1_HS_ENCODE_guideQuant.bed  Sabeti_HCRFlowFISH_MYC_R1
 
 
 ## summary_to_bedgraph.py 
 input: log2FC_summary file
+
 output: .bedgraph
 
 ### sample command line (format {log2FC summary} {col index for log2fc} {ofile name})
