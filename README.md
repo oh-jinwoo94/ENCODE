@@ -4,6 +4,7 @@
 ## for checking file correctness
 ### check_guide_quant_format.py
 input: guide_quant_format.txt (guideline for ENCODE standard) and ENCODE-formatted guide_quant files
+
 NOTE: "guide_quant_format.txt" in this repository might not be up-to-date (last modified: 5/10/2021).
 
 Purpose: Check whether input file has a proper format that matches with guide_quant_format guideline. 
@@ -79,6 +80,7 @@ Purpose: select a type of log2FC in log2FC_summary, and use it to generate .bedg
 output: .bedgraph
 
 sample command line (format {log2FC summary} {col index for log2fc} {ofile name})
+
 #### for raw log2fc
 
 python summary_to_bedgraph.py  Sabeti_HCRFlowFISH_MYC_R1.log2FC_summary 2 Sabeti_HCRFlowFISH_MYC_R1_log2FC_0.bedgraph
