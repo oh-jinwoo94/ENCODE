@@ -1,7 +1,7 @@
 # ENCODE FCC CRISPR subgroup
 
 # scripts
-## for checking file correctness
+## For checking file correctness
 ### check_guide_quant_format.py
 input: guide_quant_format.txt (guideline for ENCODE standard) and ENCODE-formatted guide_quant files
 
