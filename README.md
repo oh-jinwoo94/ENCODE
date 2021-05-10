@@ -12,6 +12,16 @@ sample command line:  python {format description file} {test file}
 
 python check_guide_quant_format.py guide_quant_format.txt GATA_rep1_HS_ENCODE_guideQuant.bed
  
+#### sample output
+If successful: 
+Test 1 passed
+Test 2 passed
+Test 3 passed
+
+#### Example failure:
+Test 1 passed
+Test 2 failed. In line 4695, 15'th element must be either targeting or negative_control
+
 
 ### check_PAM.py
 input:ENCODE-formatted guide_quant files
@@ -21,6 +31,18 @@ Purpose: check whether PAM coordinates are correctly extracted by checking NGG s
 sample command line:  python {ifile: guide_quant} {genome directory}
 
 python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes/hg38
+
+#### Sample result 1 : 
+NGG     50732
+other   398
+Less than 80% of the PAMs are NGG. The coordinates are likely to be correct
+
+#### Sample result 2: 
+NGG     5433.0
+other   4689.0
+Less than 80% of the PAMs are NGG. The coordinates are likely to be incorrect
+
+
 
 ## For analysis (PAM coordinate -> log2FC) -- after passing the above two tests.
 ### gRNA_to_log2FC.py  
