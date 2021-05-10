@@ -27,6 +27,8 @@ python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes
 
 input: ENCODE-formatted guide_quant files
 
+Purpose: compute log2FC in three different way: raw log2FC, log2FC z-transformed using negative control guides, log2FC z-tranformed using all guides
+
 output: log2FC_summary files
 
 sample command line (python  {gRNA quant 1 (e.g. T0)} {gRNA quant 2 (e.g. T14)} {ofile prefix})
