@@ -33,7 +33,7 @@ output: log2FC_summary files
 
 sample command line (python  {gRNA quant 1 (e.g. T0)} {gRNA quant 2 (e.g. T14)} {ofile prefix})
 
-python gRNA_to_log2FC.py  ../screens/MYC_rep1_LS_ENCODE_guideQuant.bed  ../screens/MYC_rep1_HS_ENCODE_guideQuant.bed  Sabeti_HCRFlowFISH_MYC_R1
+python gRNA_to_log2FC.py  MYC_rep1_LS_ENCODE_guideQuant.bed  screens/MYC_rep1_HS_ENCODE_guideQuant.bed  Sabeti_HCRFlowFISH_MYC_R1
 
 
 ### summary_to_bedgraph.py 
