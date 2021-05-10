@@ -1,4 +1,4 @@
-# ENCODE CRISPR subgroup
+# ENCODE FCC CRISPR subgroup
 
 # scripts
 ## for checking file correctness
