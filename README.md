@@ -51,7 +51,7 @@ chr12   54300767        54300770        GATA1|chr12:54300748-54300767:+ 366     
 
 chr12   54300811        54300814        GATA1|chr12:54300792-54300811:+ 551     +       chr12:54300792-54300811:+       chrX    48786590        48786591        +       GATA1   ENSG00000102145 CTCCACCACAGGTGCCTGAA    GCTCCACCACAGGTGCCTGAA   targeting       NA
 
-Only the first three, fifth, and sixth columns are relevant for these scrips.
+Only the first three, fifth, and sixth columns are relevant for these scripts.
 
 First three: PAM coordinate
 
