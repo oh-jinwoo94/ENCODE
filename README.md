@@ -47,7 +47,7 @@ NGG     50732.0
 
 other   398.0
 
-Less than 80% of the PAMs are NGG. The coordinates are likely to be correct
+More than 80% of the PAMs are NGG. The coordinates are likely to be correct
 
 #### Sample result 2: 
 
