@@ -33,7 +33,7 @@ Test 2 failed. In line 4695, 15'th element must be either targeting or negative_
 ### check_PAM.py
 input:ENCODE-formatted guide_quant files
 
-Purpose: check whether PAM coordinates are correctly extracted by checking NGG sequence. 
+Purpose: If your file passes check_guide_quant_fomat.py, use this script to check whether PAM coordinates are correctly extracted by checking NGG sequence. 
 
 sample command line:  python {ifile: guide_quant} {genome directory}
 
