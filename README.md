@@ -27,7 +27,7 @@ input: log2FC_summary file
 
 output: .bedgraph
 
-### sample command line (format {log2FC summary} {col index for log2fc} {ofile name})
+sample command line (format {log2FC summary} {col index for log2fc} {ofile name})
 
 #### for raw log2fc
 
