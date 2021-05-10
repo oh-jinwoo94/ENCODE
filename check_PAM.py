@@ -32,7 +32,7 @@ def main(argv = sys.argv):
         try: # For numeric genomic coordinates (targeting) - allows integer/float coordinates
             chrom, begin, end, strand = words[0], int(eval(words[1])), int(eval(words[2])), words[5]
         except (SyntaxError, NameError) as error:
-            pass # Ignorenontargetting controls  e.g. NA or . 
+            continue # Ignorenontargetting controls  e.g. NA or . 
 
         ###### read whole chromosome sequences  #######
         try: 
