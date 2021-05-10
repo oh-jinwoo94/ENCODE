@@ -75,7 +75,7 @@ python gRNA_to_log2FC.py  MYC_rep1_LS_ENCODE_guideQuant.bed  screens/MYC_rep1_HS
 
 input: log2FC_summary file
 
-Purpose: select a type of log2FC in log2FC_summary, and use it to generate .bedgraph. Further, to ensure that te genome coordinates do not overlap (for compatibility with UCSC genome browser), output PAM coordinates will have width of 1 (coordinate of 'N'GG for (+)-strand and of CC'N' for (-)-strand).
+Purpose: select a type of log2FC in log2FC_summary, and use it to generate .bedgraph. Further, to ensure that the genome coordinates do not overlap (for compatibility with UCSC genome browser), output PAM coordinates will have width of 1 (coordinate of 'N'GG for (+)-strand and of CC'N' for (-)-strand).
 
 output: .bedgraph
 
