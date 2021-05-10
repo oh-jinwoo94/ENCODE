@@ -10,7 +10,7 @@ Purpose: Check whether input file has a proper format that matches with guide_qu
 
 sample command line:  python {format description file} {test file}
 
-python2 check_guide_quant_format.py guide_quant_format.txt GATA_rep1_HS_ENCODE_guideQuant.bed
+python check_guide_quant_format.py guide_quant_format.txt GATA_rep1_HS_ENCODE_guideQuant.bed
  
 
 ### check_PAM.py
@@ -40,7 +40,6 @@ input: log2FC_summary file
 output: .bedgraph
 
 sample command line (format {log2FC summary} {col index for log2fc} {ofile name})
-
 #### for raw log2fc
 
 python summary_to_bedgraph.py  Sabeti_HCRFlowFISH_MYC_R1.log2FC_summary 2 Sabeti_HCRFlowFISH_MYC_R1_log2FC_0.bedgraph
