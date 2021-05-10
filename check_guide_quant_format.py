@@ -1,4 +1,6 @@
 '''
+Jin Woo Oh  -- for crispr group 
+
 Using a format guide line file (example below), check whether an input file has the correct format.
 Currently checks for:
     Test 1: The number of elements per line
