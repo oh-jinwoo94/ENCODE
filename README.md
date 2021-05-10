@@ -40,9 +40,9 @@ python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes
 
 #### Sample result 1 : 
 
-NGG     50732
+NGG     50732.0
 
-other   398
+other   398.0
 
 Less than 80% of the PAMs are NGG. The coordinates are likely to be correct
 
