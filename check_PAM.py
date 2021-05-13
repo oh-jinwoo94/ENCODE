@@ -26,6 +26,11 @@ def main(argv = sys.argv):
     chrom_to_seq = dict()
     ngg = 0; other = 0;
     for line in ifile:
+        
+        # if empty line, skip
+        if(len(line.rstrip()) == 0):
+            continue
+            
         words = line.split()
 
         ###### read whole chromosome sequences  #######
