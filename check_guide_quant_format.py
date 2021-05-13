@@ -72,7 +72,7 @@ def check_data_types(dfile_name, ifile_name):
 
     with open(ifile_name, 'r') as ifile:
         for i, line in enumerate(ifile):
-            if("negative_control" in line):
+            if(len(line.rstrip()) == 0 or "negative_control" in line):
                 continue
             words = line.split()
             for col in list(col_to_type):
