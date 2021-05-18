@@ -34,10 +34,17 @@ def main(argv = sys.argv):
         words = line.split()
 
         ###### read whole chromosome sequences  #######
-        try: # for properly formatted genomic coordinates. allows float as well 
+        
+        # Skip negative controls
+        if(words[-2] == "negative_control"):
+            continue
+            
+        try: 
             chrom, begin, end, strand = words[0], int(eval(words[1])), int(eval(words[2])), words[5]
         except (SyntaxError, NameError) as error:
-            continue # nontargetting controls  e.g. NA or . 
+            continue # Also skip improperly formatted coordinates (NA or .) 
+            
+        
 
         try: # if chromosome already loaded, use it
             cseq = chrom_to_seq[chrom]
