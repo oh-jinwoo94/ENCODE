@@ -31,7 +31,7 @@ Test 2 failed. In line 4695, 15'th element must be either targeting or negative_
 
 
 ### check_PAM.py
-input:ENCODE-formatted guide_quant files, a reference genome fasta file. 
+input: ENCODE-formatted guide_quant files, a reference genome fasta file. 
 ref hg38 can be downloaded from: https://www.encodeproject.org/files/GRCh38_no_alt_analysis_set_GCA_000001405.15/
 
 Purpose: If your file passes check_guide_quant_fomat.py, use this script to check whether your PAM coordinates are correctly extracted by checking NGG sequence. 
