@@ -17,42 +17,44 @@ def revcomp(seq):
 
 def main(argv = sys.argv):
     if(len(argv) != 3):
-        print("Usage {0} {ifile} {genome directory}")
+        print("Usage {0} {ifile} {ref_genome.fasta}")
         sys.exit()
 
-
+    print(argv[1])
     ifile = open(argv[1], 'r')
-    gdir = argv[2]
+
     chrom_to_seq = dict()
     ngg = 0; other = 0;
     for line in ifile:
-        
+
         # if empty line, skip
         if(len(line.rstrip()) == 0):
             continue
-            
-        words = line.split()
 
+        words = line.split()
         ###### read whole chromosome sequences  #######
-        
-        # Skip negative controls
-        if(words[-2] == "negative_control"):
-            continue
-            
-        try: 
+        try: # for properly formatted genomic coordinates. allows float as well 
             chrom, begin, end, strand = words[0], int(eval(words[1])), int(eval(words[2])), words[5]
         except (SyntaxError, NameError) as error:
-            continue # Also skip improperly formatted coordinates (NA or .) 
-            
-        
-
+            continue # nontargetting controls  e.g. NA or . 
+        # also just skip negative controls
+        if(words[-2] == "negative_control"):
+            continue
         try: # if chromosome already loaded, use it
             cseq = chrom_to_seq[chrom]
         except KeyError: # else, load chromosome
-            with open(gdir + "/" + chrom + ".fa", 'r') as fafile:
-                fafile.readline()
-                cseq = "".join([line.rstrip() for line in fafile])
+            with open(argv[2], 'r') as ref_file:
+                while(ref_file.readline().split()[0] != (">" + chrom)):
+                    pass
+                cseq = []
+                for line in ref_file:
+                    if(">" not in line):
+                        cseq.append(line.rstrip())
+                    else:
+                        break
+                cseq = "".join(cseq)
                 chrom_to_seq[chrom] = cseq
+
 
         ######  fetch PAM sequence using PAM coordinates   ######
         if(strand == "+"):
