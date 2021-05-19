@@ -38,7 +38,7 @@ Purpose: If your file passes check_guide_quant_fomat.py, use this script to chec
 
 sample command line:  python {ifile: guide_quant} {reference fasta}
 
-python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  /mnt/data0/joh27/genomes/hg38
+python check_PAM.py  MYC_rep1_LS_ENCODE_guideQuant.bed  GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta
 
 #### Sample result 1 : 
 
