@@ -58,15 +58,19 @@ def main(argv = sys.argv):
     log2FC_mean_normed = np.log2(((pID_to_cnt_1[:,3]/(np.mean(pID_to_cnt_1[:,3])) + 1.0) / \
                                   (pID_to_cnt_2[:,3]/(np.mean(pID_to_cnt_2[:,3])) + 1.0)).astype('float64'))
     print(log2FC_mean_normed)
-    
+
+    # tot normed (suggested by josh)
+    log2FC_tot_normed = np.log2((((pID_to_cnt_1[:,3]+1)/(np.sum(pID_to_cnt_1[:,3]))) / \
+                                  ((pID_to_cnt_2[:,3]+1)/(np.sum(pID_to_cnt_2[:,3])))+1).astype('float64'))
+
     with open(prefix + ".log2FC_summary", 'w') as ofile:
-        ofile.write("\t".join(["name", "PAM_ID","raw_log2FC", "ztransformed_by_neg_control", "ztransformed_by_all_guides", "normalized_by_mean_count"]) + '\n')
+        ofile.write("\t".join(["name", "PAM_ID","raw_log2FC", "ztransformed_by_neg_control", "ztransformed_by_all_guides", "normalized_by_mean_count", "normalized_by_tot_count"]) + '\n')
         for i in range(0, len(log2FC)):
             if("NA|.:.-." in pID_to_cnt_1[i,0]):
                     continue
             else:
                 ofile.write("\t".join([pID_to_cnt_1[i,0], pID_to_cnt_1[i,1] \
-                               ,str(log2FC[i]), str(log2FC_neg_norm[i]), str(log2FC_all_norm[i]), str(log2FC_mean_normed[i])]) + '\n')
+                               ,str(log2FC[i]), str(log2FC_neg_norm[i]), str(log2FC_all_norm[i]), str(log2FC_mean_normed[i]), str(log2FC_tot_normed[i])]) + '\n')
             
             
     ifile1.close()
