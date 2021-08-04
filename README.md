@@ -97,6 +97,9 @@ python summary_to_bedgraph.py  Sabeti_HCRFlowFISH_MYC_R1.log2FC_summary 4 Sabeti
 #### for mean-normalized log2((X/mean(X)+1)/(Y/mean(Y)+1))
 python summary_to_bedgraph.py  Sabeti_HCRFlowFISH_MYC_R1.log2FC_summary 5 Sabeti_HCRFlowFISH_MYC_R1_log2FC_3.bedgraph
 
+#### for sum-normalized log2((X/sum(X)+1)/(Y/sum(Y)+1))
+python summary_to_bedgraph.py  Sabeti_HCRFlowFISH_MYC_R1.log2FC_summary 6 Sabeti_HCRFlowFISH_MYC_R1_log2FC_4.bedgraph
+
 # sample file format
 
 ## ENCODE standard guide_quantification file
