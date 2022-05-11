@@ -131,3 +131,6 @@ chrX    48476136        48476136        0.16272950003810832
 chrX    48476137        48476137        0.14542752477380644
 
 
+
+## scripts for gRNA coordinate conversions
+Some of the CRISPR screens used in CRISPR WG had coordinates in hg19 (Engreitz/Bassik/Shen lab), and we converted their hg19 coordinates to hg38 using bowtie1. Some python and shell scripts are uploaded here, which can be executed in this order: bed_to_fa_all.sh -> bowtie_all.sh -> bwt_to_consersion_all.sh -> convert_cv_using_coord_all.sh. But, some of these scripts need to be re-configured to be usable (e.g. directory names specified in .sh). 
